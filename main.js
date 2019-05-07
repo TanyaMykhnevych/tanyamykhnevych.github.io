@@ -47,7 +47,7 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { useHash: true })],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
         })
     ], AppRoutingModule);
@@ -837,6 +837,7 @@ var AppSettings = /** @class */ (function () {
     function AppSettings() {
     }
     AppSettings.clientHost = 'https://tanyamykhnevych.github.io';
+    // public static clientHost = 'http://localhost:4200';
     AppSettings.host = 'http://localhost:5000';
     AppSettings.apiHost = 'http://localhost:5000/api';
     AppSettings.hubHost = 'http://localhost:5000';
@@ -1010,7 +1011,7 @@ var DashboardRoutingModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_dashboard_routes__WEBPACK_IMPORTED_MODULE_4__["routes"]),
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_dashboard_routes__WEBPACK_IMPORTED_MODULE_4__["routes"], { useHash: true }),
             ],
             declarations: [],
             exports: [
@@ -1245,7 +1246,7 @@ var HomeRoutingModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(_home_routes__WEBPACK_IMPORTED_MODULE_3__["routes"]),
+                _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(_home_routes__WEBPACK_IMPORTED_MODULE_3__["routes"], { useHash: true }),
             ],
         })
     ], HomeRoutingModule);
@@ -1749,7 +1750,7 @@ var LoginRoutingModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_login_routes__WEBPACK_IMPORTED_MODULE_4__["routes"]),
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_login_routes__WEBPACK_IMPORTED_MODULE_4__["routes"], { useHash: true }),
             ],
             declarations: [],
         })
@@ -2048,10 +2049,10 @@ var ProjectListComponent = /** @class */ (function () {
         this.toggle(row);
     };
     ProjectListComponent.prototype.openSharedProj = function (id) {
-        window.open(src_app_core_settings__WEBPACK_IMPORTED_MODULE_4__["AppSettings"].clientHost + "/shared/" + id, "_blank");
+        window.open(src_app_core_settings__WEBPACK_IMPORTED_MODULE_4__["AppSettings"].clientHost + "/#/shared/" + id, "_blank");
     };
     ProjectListComponent.prototype.getCopyCode = function (id) {
-        return "<iframe src=\"" + src_app_core_settings__WEBPACK_IMPORTED_MODULE_4__["AppSettings"].clientHost + "/shared/" + id + "\" frameBorder=\"NO\" style=\"width:1100px;height:800px;\"></iframe>";
+        return "<iframe src=\"" + src_app_core_settings__WEBPACK_IMPORTED_MODULE_4__["AppSettings"].clientHost + "/#/shared/" + id + "\" frameBorder=\"NO\" style=\"width:1100px;height:800px;\"></iframe>";
     };
     ProjectListComponent.prototype.copyCode = function (id, event) {
         event.preventDefault();
